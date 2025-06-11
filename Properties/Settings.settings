@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AdvancedToDoList.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ProjFormWidth" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">800</Value>
+    </Setting>
+    <Setting Name="ProjFormHeight" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">550</Value>
+    </Setting>
+    <Setting Name="ProjFormSplitterMainDist" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">110</Value>
+    </Setting>
+    <Setting Name="ProjFormSplitterTasksDist" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="ProjFormSplitterPartsDist" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">120</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

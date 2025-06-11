@@ -1,0 +1,143 @@
+{
+  "AllPersons": [
+    {
+      "Id": "d73d9aab-9536-4e83-bbc7-3758a2c6dcc0",
+      "Name": "William",
+      "Email": "William"
+    },
+    {
+      "Id": "87198dd4-1bf7-4565-82d6-396b5b154f1a",
+      "Name": "Sofie",
+      "Email": "Sofie"
+    },
+    {
+      "Id": "42b78741-405b-45d8-9ea6-bf33545de845",
+      "Name": "Bjuv",
+      "Email": "Bjuv"
+    },
+    {
+      "Id": "bf32caf4-02fd-4e63-ba2d-7d57580f27ee",
+      "Name": "Klippan",
+      "Email": "Klippan"
+    },
+    {
+      "Id": "e1b67e47-0c13-4538-b475-8a399404e9e3",
+      "Name": "Åstorp",
+      "Email": "Åstorp"
+    },
+    {
+      "Id": "7475c341-06fd-45af-97eb-f2a2aaf86587",
+      "Name": "Perstorp",
+      "Email": "Perstorp"
+    },
+    {
+      "Id": "fae40a63-3f1d-47d0-8aad-59bf34587d52",
+      "Name": "Svalöv",
+      "Email": "Svalöv"
+    },
+    {
+      "Id": "c6d74061-686d-4006-bf66-573032fcb4ed",
+      "Name": "Örkelljunga",
+      "Email": "Örkelljunga"
+    }
+  ],
+  "AllProjects": [
+    {
+      "Id": "140fe69f-c39e-4248-8490-d656ca568397",
+      "Title": "Hela projektet",
+      "Description": "",
+      "StartDate": "2025-06-02T00:00:00+02:00",
+      "EndDate": "2025-06-30T00:00:00+02:00",
+      "Row": 7,
+      "AttachedFilePaths": [],
+      "Tasks": [
+        {
+          "Id": "45c21a23-8e20-4d9f-9a86-03e3d6426ec8",
+          "Title": "Beställ nya produkter för ÖFF",
+          "AssignedTo": [
+            {
+              "Id": "42b78741-405b-45d8-9ea6-bf33545de845",
+              "Name": "Bjuv",
+              "Email": "Bjuv"
+            },
+            {
+              "Id": "bf32caf4-02fd-4e63-ba2d-7d57580f27ee",
+              "Name": "Klippan",
+              "Email": "Klippan"
+            },
+            {
+              "Id": "e1b67e47-0c13-4538-b475-8a399404e9e3",
+              "Name": "Åstorp",
+              "Email": "Åstorp"
+            },
+            {
+              "Id": "7475c341-06fd-45af-97eb-f2a2aaf86587",
+              "Name": "Perstorp",
+              "Email": "Perstorp"
+            },
+            {
+              "Id": "fae40a63-3f1d-47d0-8aad-59bf34587d52",
+              "Name": "Svalöv",
+              "Email": "Svalöv"
+            },
+            {
+              "Id": "c6d74061-686d-4006-bf66-573032fcb4ed",
+              "Name": "Örkelljunga",
+              "Email": "Örkelljunga"
+            },
+            {
+              "Id": "87198dd4-1bf7-4565-82d6-396b5b154f1a",
+              "Name": "Sofie",
+              "Email": "Sofie"
+            }
+          ],
+          "Parts": [
+            {
+              "Id": "4059d5f9-4aac-4bc4-86c1-0dfcc10d10ac",
+              "Title": "Bjuv",
+              "IsCompleted": true,
+              "Description": "bjud i bjuv"
+            },
+            {
+              "Id": "ef438758-4bc2-4916-8fab-62a4db6416c8",
+              "Title": "Klippan",
+              "IsCompleted": true,
+              "Description": "Klippan!!!"
+            },
+            {
+              "Id": "437ff858-1b0b-43dd-bddf-eb0bdd6ece5b",
+              "Title": "Åstorp",
+              "IsCompleted": false,
+              "Description": "Test åstrorp"
+            },
+            {
+              "Id": "67ecc98a-63c3-465b-8528-6b6077a8b9d9",
+              "Title": "Perstorp",
+              "IsCompleted": false,
+              "Description": ""
+            },
+            {
+              "Id": "6b42fe57-b6cb-4920-a1b0-5e14604daa8a",
+              "Title": "Svalöv",
+              "IsCompleted": false,
+              "Description": ""
+            },
+            {
+              "Id": "52d74a25-eabb-454a-aa2e-6c4bf3a64b79",
+              "Title": "Örkelljunga",
+              "IsCompleted": false,
+              "Description": ""
+            },
+            {
+              "Id": "d1e26597-2bc8-4be9-a29d-baf81791ab74",
+              "Title": "Sofie",
+              "IsCompleted": true,
+              "Description": ""
+            }
+          ],
+          "Comments": []
+        }
+      ]
+    }
+  ]
+}

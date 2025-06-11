@@ -1,0 +1,55 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\projects\\Csharp\\AdvancedToDoList\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AA102B9F-4BD8-4090-B21B-09BAB16051E4}|AdvancedToDoList.csproj|c:\\projects\\csharp\\advancedtodolist\\controls\\timelinecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA102B9F-4BD8-4090-B21B-09BAB16051E4}|AdvancedToDoList.csproj|solutionrelative:controls\\timelinecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AA102B9F-4BD8-4090-B21B-09BAB16051E4}|AdvancedToDoList.csproj|c:\\projects\\csharp\\advancedtodolist\\forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AA102B9F-4BD8-4090-B21B-09BAB16051E4}|AdvancedToDoList.csproj|solutionrelative:forms\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 384,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TimelineControl.cs",
+              "DocumentMoniker": "C:\\projects\\Csharp\\AdvancedToDoList\\Controls\\TimelineControl.cs",
+              "RelativeDocumentMoniker": "Controls\\TimelineControl.cs",
+              "ToolTip": "C:\\projects\\Csharp\\AdvancedToDoList\\Controls\\TimelineControl.cs",
+              "RelativeToolTip": "Controls\\TimelineControl.cs",
+              "ViewState": "AgIAAC0CAAAAAAAAAAAwwFECAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T18:10:02.72Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\projects\\Csharp\\AdvancedToDoList\\Forms\\MainForm.cs",
+              "RelativeDocumentMoniker": "Forms\\MainForm.cs",
+              "ToolTip": "C:\\projects\\Csharp\\AdvancedToDoList\\Forms\\MainForm.cs",
+              "RelativeToolTip": "Forms\\MainForm.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAD4v18AAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T17:51:54.283Z",
+              "IsPinned": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
