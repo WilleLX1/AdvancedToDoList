@@ -15,4 +15,4 @@ python3 main.py
 The application will store its data in `projects.json` in the repository folder and
 serve on [http://localhost:5000](http://localhost:5000).
 
-The HTML pages use simple styling inspired by the WinForms dialogs to make it easier to work with projects and tasks.
+The HTML pages use simple styling inspired by the WinForms dialogs. The start page now shows all projects on a timeline where you can zoom between day, week and month views and click each project to open it.

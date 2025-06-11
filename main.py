@@ -39,6 +39,10 @@ BASE_PAGE = '''<!DOCTYPE html>
         button { padding:6px 12px; margin-top:10px; }
         table { width:100%; border-collapse: collapse; margin-top:10px; }
         th, td { border:1px solid #ddd; padding:8px; text-align:left; }
+        .timeline { position: relative; overflow-x: auto; padding-top: 40px; white-space: nowrap; }
+        .timeline .header .cell { position: absolute; top:0; width:80px; text-align:center; font-size:12px; border-right:1px solid #ccc; }
+        .timeline .projects { position: relative; height:30px; }
+        .timeline .project { position:absolute; top:0; background:#2196F3; color:#fff; padding:4px; border-radius:4px; text-decoration:none; }
     </style>
 </head>
 <body>
@@ -58,20 +62,91 @@ def render_page(title, body_template, **context):
 @app.route('/')
 def index():
     data = load_data()
+    scale = request.args.get('scale', 'month')
+    if scale not in {'day', 'week', 'month'}:
+        scale = 'month'
+
+    projects = [p for p in data['AllProjects'] if p.get('StartDate') and p.get('EndDate')]
+    from datetime import datetime, timedelta
+
+    def parse(date):
+        return datetime.fromisoformat(date)
+
+    if projects:
+        start = min(parse(p['StartDate']) for p in projects)
+        end = max(parse(p['EndDate']) for p in projects)
+    else:
+        start = end = datetime.today()
+
+    headers = []
+    positions = []
+    slot_width = {'day': 20, 'week': 40, 'month': 80}[scale]
+
+    cur = start.replace(day=1) if scale == 'month' else start
+    index = 0
+    while cur <= end:
+        if scale == 'day':
+            label = cur.strftime('%Y-%m-%d')
+            cur += timedelta(days=1)
+        elif scale == 'week':
+            label = f"v{cur.isocalendar().week} {cur.year}"
+            cur += timedelta(days=7)
+        else:
+            label = cur.strftime('%b %Y')
+            year = cur.year + (cur.month // 12)
+            month = cur.month % 12 + 1
+            cur = cur.replace(year=year, month=month, day=1)
+        headers.append({'label': label, 'offset': index * slot_width})
+        index += 1
+
+    def offset(start_date):
+        if scale == 'day':
+            delta = (parse(start_date) - start).days
+        elif scale == 'week':
+            delta = (parse(start_date) - start).days // 7
+        else:
+            delta = (parse(start_date).year - start.year) * 12 + parse(start_date).month - start.month
+        return delta * slot_width
+
+    def width(s, e):
+        if scale == 'day':
+            delta = (parse(e) - parse(s)).days + 1
+        elif scale == 'week':
+            delta = ((parse(e) - parse(s)).days // 7) + 1
+        else:
+            delta = ((parse(e).year - parse(s).year) * 12 + parse(e).month - parse(s).month) + 1
+        return max(delta * slot_width - 4, slot_width)
+
+    for p in projects:
+        positions.append({
+            'title': p['Title'],
+            'id': p['Id'],
+            'offset': offset(p['StartDate']),
+            'width': width(p['StartDate'], p['EndDate'])
+        })
+
     body = '''
 <h1>Projekt</h1>
 <a href="{{ url_for('add_project') }}">Nytt projekt</a>
-<table>
-  <tr><th>Namn</th><th>Datum</th></tr>
-  {% for p in projects %}
-  <tr>
-    <td><a href="{{ url_for('view_project', pid=p['Id']) }}">{{ p['Title'] }}</a></td>
-    <td>{{ p['StartDate'] }} - {{ p['EndDate'] }}</td>
-  </tr>
-  {% endfor %}
-</table>
+<p>Zooma:
+  <a href="{{ url_for('index', scale='day') }}">Dag</a> |
+  <a href="{{ url_for('index', scale='week') }}">Vecka</a> |
+  <a href="{{ url_for('index', scale='month') }}">Månad</a>
+</p>
+<div class="timeline">
+  <div class="header">
+    {% for h in headers %}
+    <div class="cell" style="left:{{ h['offset'] }}px">{{ h['label'] }}</div>
+    {% endfor %}
+  </div>
+  <div class="projects">
+    {% for p in positions %}
+    <a class="project" href="{{ url_for('view_project', pid=p['id']) }}" style="left:{{ p['offset'] }}px;width:{{ p['width'] }}px">{{ p['title'] }}</a>
+    {% endfor %}
+  </div>
+</div>
 '''
-    return render_page('Projekt', body, projects=data['AllProjects'])
+    return render_page('Projekt', body, headers=headers, positions=positions)
 
 
 @app.route('/project/add', methods=['GET', 'POST'])
